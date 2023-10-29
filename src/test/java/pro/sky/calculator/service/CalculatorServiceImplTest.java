@@ -20,7 +20,7 @@ class CalculatorServiceImplTest {
     }
 
     @Test
-    void plus_success() {
+    void plus_shouldReturnPositiveNumWhenNum1AndNum2ArePositive() {
         //Подготовка входных данных
         int num1 = 3;
         int num2 = 4;
@@ -31,13 +31,14 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.plus(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 + num2) > 0);
     }
 
     @Test
-    void plus_success2() {
+    void plus_shouldReturnNegativeNumWhenNum1AndNum2AreNegative() {
         //Подготовка входных данных
-        int num1 = 31;
-        int num2 = 24;
+        int num1 = -31;
+        int num2 = -214;
 
         //Подготовка ожидаемого результата
         String expected = TestUtils.formatResult(num1, num2, "+", String.valueOf((num1 + num2)));
@@ -45,10 +46,11 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.plus(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 + num2) < 0);
     }
 
     @Test
-    void minus_success() {
+    void minus_shouldReturnPositiveNumWhenNum1AndNum2ArePositiveAndNum1MoreThenNum2() {
         //Подготовка входных данных
         int num1 = 21;
         int num2 = 4;
@@ -59,13 +61,14 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.minus(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 - num2) > 0);
     }
 
     @Test
-    void minus_success2() {
+    void minus_shouldReturnPositiveNumWhenNum2IsNegative() {
         //Подготовка входных данных
         int num1 = 51;
-        int num2 = 14;
+        int num2 = -14;
 
         //Подготовка ожидаемого результата
         String expected = TestUtils.formatResult(num1, num2, "-", String.valueOf((num1 - num2)));
@@ -73,10 +76,11 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.minus(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 - num2) > 0);
     }
 
     @Test
-    void multiply_success() {
+    void multiply_shouldReturnPositiveNumWhenNum1AndNum2ArePositive() {
         //Подготовка входных данных
         int num1 = 4;
         int num2 = 5;
@@ -87,13 +91,14 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.multiply(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 * num2) > 0);
     }
 
     @Test
-    void multiply_success2() {
+    void multiply_shouldReturnPositiveNumWhenNum1AndNum2AreNegative() {
         //Подготовка входных данных
-        int num1 = 14;
-        int num2 = 15;
+        int num1 = -14;
+        int num2 = -15;
 
         //Подготовка ожидаемого результата
         String expected = TestUtils.formatResult(num1, num2, "*", String.valueOf((num1 * num2)));
@@ -101,10 +106,11 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.multiply(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 * num2) > 0);
     }
 
     @Test
-    void divide_success1() {
+    void divide_shouldReturnPositiveNumWhenNum1AndNum2ArePositive() {
         //Подготовка входных данных
         int num1 = 30;
         int num2 = 15;
@@ -115,13 +121,14 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.divide(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 * num2) > 0);
     }
 
     @Test
-    void divide_success2() {
+    void divide_shouldReturnPositiveNumWhenNum1AndNum2AreNegative() {
         //Подготовка входных данных
-        int num1 = 10;
-        int num2 = 4;
+        int num1 = -10;
+        int num2 = -4;
 
         //Подготовка ожидаемого результата
         String expected = TestUtils.formatResult(num1, num2, "/", String.valueOf((double) num1 / num2));
@@ -129,6 +136,7 @@ class CalculatorServiceImplTest {
         //Начало теста
         String actual = calculatorService.divide(num1, num2);
         assertEquals(expected, actual);
+        assert ((num1 * num2) > 0);
     }
 
     @Test

@@ -17,8 +17,8 @@ class CalculatorServiceImplParametrizedTest {
     public static Stream<Arguments> plusParams() {
         return Stream.of(
                 Arguments.of("2", "2", TestUtils.formatResult(2, 2, "+", String.valueOf(2 + 2))),
-                Arguments.of("3", "3", TestUtils.formatResult(3, 3, "+", String.valueOf(3 + 3))),
-                Arguments.of("4", "4", TestUtils.formatResult(4, 4, "+", String.valueOf(4 + 4)))
+                Arguments.of("-3", "-3", TestUtils.formatResult(-3, -3, "+", String.valueOf(-3 + -3))),
+                Arguments.of("-4", "4", TestUtils.formatResult(-4, 4, "+", String.valueOf(-4 + 4)))
         );
     }
 
@@ -31,8 +31,8 @@ class CalculatorServiceImplParametrizedTest {
     public static Stream<Arguments> minusParams() {
         return Stream.of(
                 Arguments.of("2", "1", TestUtils.formatResult(2, 1, "-", String.valueOf(2 - 1))),
-                Arguments.of("5", "3", TestUtils.formatResult(5, 3, "-", String.valueOf(5 - 3))),
-                Arguments.of("4", "4", TestUtils.formatResult(4, 4, "-", String.valueOf(4 - 4)))
+                Arguments.of("-5", "-3", TestUtils.formatResult(-5, -3, "-", String.valueOf(-5 - -3))),
+                Arguments.of("-4", "4", TestUtils.formatResult(-4, 4, "-", String.valueOf(-4 - 4)))
         );
     }
 
@@ -45,8 +45,8 @@ class CalculatorServiceImplParametrizedTest {
     public static Stream<Arguments> multiplyParams() {
         return Stream.of(
                 Arguments.of("2", "4", TestUtils.formatResult(2, 4, "*", String.valueOf(2 * 4))),
-                Arguments.of("5", "3", TestUtils.formatResult(5, 3, "*", String.valueOf(5 * 3))),
-                Arguments.of("4", "4", TestUtils.formatResult(4, 4, "*", String.valueOf(4 * 4)))
+                Arguments.of("-5", "-3", TestUtils.formatResult(-5, -3, "*", String.valueOf(-5 * -3))),
+                Arguments.of("-4", "4", TestUtils.formatResult(-4, 4, "*", String.valueOf(-4 * 4)))
         );
     }
 
@@ -59,8 +59,8 @@ class CalculatorServiceImplParametrizedTest {
     public static Stream<Arguments> divideParams() {
         return Stream.of(
                 Arguments.of("10", "2", TestUtils.formatResult(10, 2, "/", String.valueOf((double) 10 / 2))),
-                Arguments.of("5", "2", TestUtils.formatResult(5, 2, "/", String.valueOf((double) 5 / 2))),
-                Arguments.of("10", "3", TestUtils.formatResult(10, 3, "/", String.valueOf((double) 10 / 3)))
+                Arguments.of("-5", "-2", TestUtils.formatResult(-5, -2, "/", String.valueOf((double) -5 / -2))),
+                Arguments.of("-10", "3", TestUtils.formatResult(-10, 3, "/", String.valueOf((double) -10 / 3)))
         );
     }
 
